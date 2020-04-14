@@ -81,3 +81,21 @@ If you can get your `#current_player` method working using `if`/`else` statement
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-10-current-player' title='Tic Tac Toe Current Player'>Tic Tac Toe Current Player</a> on Learn.co and start learning to code for free.</p>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/ttt-10-current-player'>Tic Tac Toe Current Player</a> on Learn.co and start learning to code for free.</p>
+
+def turn_count(board)
+  counter = 0
+  board.each do |occupied|
+    if occupied == "X" || occupied == "O"
+      counter += 1
+    end
+  end
+  counter
+end
+
+def current_player(board)
+  if turn_count(board).even?
+    "X"
+  elsif turn_count(board).odd?
+    "O"
+  end
+end
